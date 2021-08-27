@@ -152,7 +152,6 @@
         <version>2.22.1</version>
         <configuration>
           <useSystemClassLoader>false</useSystemClassLoader>
-          <testFailureIgnore>true</testFailureIgnore>
         </configuration>
       </plugin>
 
@@ -185,6 +184,14 @@
       <url>https://repository.folio.org/repository/maven-folio</url>
     </repository>
   </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>folio-nexus</id>
+      <name>FOLIO Maven repository</name>
+      <url>https://repository.folio.org/repository/maven-folio</url>
+    </pluginRepository>
+  </pluginRepositories>
 
   <distributionManagement>
     <repository>
