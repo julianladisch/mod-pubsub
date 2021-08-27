@@ -12,8 +12,6 @@
     <basedir>${project.parent.basedir}</basedir>
     <ramlfiles_path>${project.parent.basedir}/ramls</ramlfiles_path>
     <sonar.exclusions>**/OkapiConnectionParams.java</sonar.exclusions>
-    <sonar.exclusions>**/PubsubClient.java</sonar.exclusions>
-    <sonar.exclusions>**/PomReader.java</sonar.exclusions>
   </properties>
 
   <dependencies>
@@ -61,11 +59,6 @@
       <artifactId>folio-di-support</artifactId>
       <version>1.2.0</version>
       <type>jar</type>
-    </dependency>
-    <dependency>
-      <groupId>org.postgresql</groupId>
-      <artifactId>postgresql</artifactId>
-      <version>42.2.18</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.module</groupId>
@@ -360,16 +353,6 @@
           </execution>
         </executions>
       </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.22.2</version>
-        <configuration>
-          <useSystemClassLoader>false</useSystemClassLoader>
-        </configuration>
-      </plugin>
-
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-release-plugin</artifactId>
@@ -381,7 +364,6 @@
           <localCheckout>true</localCheckout>
         </configuration>
       </plugin>
-
     </plugins>
   </build>
 
