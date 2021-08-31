@@ -61,6 +61,11 @@
       <type>jar</type>
     </dependency>
     <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.2.18</version>
+    </dependency>
+    <dependency>
       <groupId>com.fasterxml.jackson.module</groupId>
       <artifactId>jackson-module-jaxb-annotations</artifactId>
       <version>${jackson.jaxb.version}</version>
@@ -154,6 +159,7 @@
       <groupId>org.folio</groupId>
       <artifactId>postgres-testing</artifactId>
       <version>${raml-module-builder.version}</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
@@ -364,6 +370,7 @@
           <localCheckout>true</localCheckout>
         </configuration>
       </plugin>
+
     </plugins>
   </build>
 

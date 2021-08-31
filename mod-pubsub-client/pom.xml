@@ -151,6 +151,27 @@
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
+        <artifactId>properties-maven-plugin</artifactId>
+        <version>1.0.0</version>
+        <executions>
+          <execution>
+            <id>set-system-properties</id>
+            <goals>
+              <goal>set-system-properties</goal>
+            </goals>
+            <configuration>
+              <properties>
+                <property>
+                  <name>log4j.configurationFile</name>
+                  <value>${project.baseUri}src/main/resources/log4j2.xml</value>
+                </property>
+              </properties>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
         <version>3.2.0</version>
         <executions>
@@ -167,6 +188,30 @@
                 <!-- Adds model classes generated in server module -->
                 <source>../mod-pubsub-server/target/generated-sources/raml-jaxrs</source>
               </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.folio</groupId>
+        <artifactId>domain-models-maven-plugin</artifactId>
+        <version>${raml-module-builder.version}</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.folio</groupId>
+            <artifactId>mod-pubsub-server</artifactId>
+            <version>${project.parent.version}</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <id>generate_interfaces</id>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <configuration>
+              <generateInterfaces>false</generateInterfaces>
+              <generateClients>false</generateClients>
             </configuration>
           </execution>
         </executions>
