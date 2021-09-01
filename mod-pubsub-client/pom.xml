@@ -183,35 +183,9 @@
             <phase>initialize</phase>
             <configuration>
               <sources>
-                <!-- Adds client classes generated in current client module-->
-                <source>${project.build.directory}/generated-sources/raml-jaxrs</source>
                 <!-- Adds model classes generated in server module -->
                 <source>../mod-pubsub-server/target/generated-sources/raml-jaxrs</source>
               </sources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.folio</groupId>
-        <artifactId>domain-models-maven-plugin</artifactId>
-        <version>${raml-module-builder.version}</version>
-        <dependencies>
-          <dependency>
-            <groupId>org.folio</groupId>
-            <artifactId>mod-pubsub-server</artifactId>
-            <version>${project.parent.version}</version>
-          </dependency>
-        </dependencies>
-        <executions>
-          <execution>
-            <id>generate_interfaces</id>
-            <goals>
-              <goal>java</goal>
-            </goals>
-            <configuration>
-              <generateInterfaces>false</generateInterfaces>
-              <generateClients>false</generateClients>
             </configuration>
           </execution>
         </executions>
